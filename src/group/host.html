@@ -1,0 +1,150 @@
+<div class="ts-host-app is-hidden" id="tsHostApp">
+  <div class="ts-host-shell">
+    <section class="ts-host-top">
+      <div>
+        <p class="ts-eyebrow">Групповая сессия
+        </p>
+        <h1 class="ts-host-title">Тест на Синдром Титаника
+        </h1>
+        <p class="ts-host-copy">
+          Хост показывает QR-код на встрече, участники проходят тест со своих телефонов.
+        </p>
+      </div>
+    </section>
+    <section class="ts-host-card" id="tsSessionCreateCard">
+      <div class="ts-host-form">
+        <div>
+          <label for="tsSessionTitleInput">Название встречи
+          </label>
+          <input id="tsSessionTitleInput" type="text" placeholder="Командная встреча" autocomplete="off">
+        </div>
+        <button type="button" class="ts-btn" id="tsCreateSessionBtn">Создать сессию
+        </button>
+      </div>
+    </section>
+    <p class="ts-session-note" id="tsHostStatus" role="status" aria-live="polite">
+    </p>
+    <section class="ts-host-grid is-hidden" id="tsHostDashboard">
+      <div class="ts-host-card ts-qr-box"> <a id="tsSessionQrLink" href="#" target="_blank" rel="noopener" title="Открыть QR-код крупно"><img id="tsSessionQr" src="" alt="QR-код групповой сессии"></a>
+        <input class="ts-host-link" id="tsParticipantLink" type="text" readonly>
+        <div class="ts-qr-actions"> <a class="ts-btn ts-btn-outline" id="tsOpenQrLink" href="#" target="_blank" rel="noopener">Открыть QR-код крупно<svg class="ts-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <button type="button" class="ts-btn ts-btn-outline" id="tsCopySessionLinkBtn">Скопировать ссылку
+          </button>
+        </div>
+        <p class="ts-session-note">Покажите QR с экрана на встрече, или откройте его в новой вкладке и расшарьте в звонке. Эта страница остается открытой у хоста.
+        </p>
+      </div>
+      <div class="ts-host-card">
+        <p class="ts-eyebrow" id="tsSessionTitleView">Командная встреча
+        </p>
+        <h2 class="ts-subtitle">Как идет тестирование
+        </h2>
+        <div class="ts-host-stats">
+          <div class="ts-stat"> <strong id="tsStartedCount">0</strong> <span>открыли ссылку</span>
+          </div>
+          <div class="ts-stat"> <strong id="tsCompletedCount">0</strong> <span>завершили тест</span>
+          </div>
+          <div class="ts-stat"> <strong id="tsAverageTotal">0</strong> <span>средний балл</span>
+          </div>
+        </div>
+        <div class="ts-host-actions">
+          <button type="button" class="ts-btn" id="tsRefreshSessionBtn">Обновить
+          </button>
+          <button type="button" class="ts-btn ts-btn-outline" id="tsShowReportBtn">Показать отчет<svg class="ts-ext-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="ts-host-actions ts-host-actions-danger">
+          <button type="button" class="ts-restart" id="tsResetSessionBtn">Сбросить результаты
+          </button>
+          <button type="button" class="ts-btn ts-btn-danger" id="tsCloseSessionBtn">Завершить сессию
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="ts-host-app is-hidden" id="tsReportApp">
+  <div class="ts-host-shell">
+    <section class="ts-host-top">
+      <div>
+        <p class="ts-eyebrow">Групповой отчет
+        </p>
+        <h1 class="ts-host-title" id="tsReportPageTitle">Итоги командного теста
+        </h1>
+        <p class="ts-host-copy" id="tsReportPageSummary">
+          Отчет появится после первых завершенных прохождений.
+        </p>
+      </div>
+    </section>
+    <section class="ts-host-card">
+      <div class="ts-host-stats ts-report-stats">
+        <div class="ts-stat"> <strong id="tsRepStatCompleted">0</strong> <span>завершили тест</span>
+        </div>
+        <div class="ts-stat"> <strong id="tsRepStatAverage">0</strong> <span>средний балл риска из 75 · ниже лучше</span>
+        </div>
+        <div class="ts-stat"> <strong id="tsRepStatMin">0</strong> <span>лучший балл</span>
+        </div>
+        <div class="ts-stat"> <strong id="tsRepStatMax">0</strong> <span>самый рискованный балл</span>
+        </div>
+      </div>
+    </section>
+    <section class="ts-host-card">
+      <p class="ts-eyebrow">Общий результат
+      </p>
+      <h2 class="ts-subtitle">Где находится команда
+      </h2>
+      <p class="ts-muted-text">Чем ниже балл, тем ниже риск Синдрома Титаника. Здесь показаны средний балл команды и распределение участников по уровням риска.
+      </p>
+      <div class="ts-dotplot" id="tsTotalDotplot">
+      </div>
+      <div class="ts-dist-legend" id="tsRiskDistLegend">
+      </div>
+    </section>
+    <section class="ts-host-card">
+      <p class="ts-eyebrow">Профиль команды
+      </p>
+      <h2 class="ts-subtitle">Три зоны готовности к изменениям
+      </h2>
+      <p class="ts-muted-text">Средний балл риска в каждой зоне: 0 — сильная зона, 25 — критическая.
+      </p>
+      <div class="ts-dotplot-grid" id="tsDimensionDotplots">
+      </div>
+    </section>
+    <section class="ts-host-card">
+      <p class="ts-eyebrow">Слабые места
+      </p>
+      <h2 class="ts-subtitle">Где команда чаще всего проседает
+      </h2>
+      <p class="ts-muted-text">Сколько участников получили самый высокий, то есть наиболее рискованный, балл именно в этой зоне.
+      </p>
+      <div class="ts-dotplot" id="tsWeakestDotplot">
+      </div>
+    </section>
+    <section class="ts-host-card">
+      <p class="ts-eyebrow">По участникам
+      </p>
+      <h2 class="ts-subtitle">Индивидуальные результаты
+      </h2>
+      <div class="ts-table-wrap">
+        <table class="ts-report-table" id="tsResultsTable">
+          <thead>
+            <tr>
+              <th>Участник
+              </th>
+              <th>Балл
+              </th>
+              <th>Риск
+              </th>
+              <th>Слабая зона
+              </th>
+              <th>Завершил(а)
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tsResultsTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

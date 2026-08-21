@@ -1,0 +1,272 @@
+<div class="ts-quiz" id="titanicQuiz">
+  <div id="tsQuizView">
+    <div class="ts-session-banner" id="tsSessionBanner"><strong id="tsSessionBannerTitle">Групповая сессия</strong><span>Ваш индивидуальный результат сохранится для вас, а в отчет хоста попадут только агрегированные значения.</span>
+    </div>
+    <header class="ts-header">
+      <p class="ts-eyebrow">Инструмент пересборки #1
+      </p>
+      <h2 class="ts-title">Тест на Синдром Титаника
+      </h2>
+      <p class="ts-lead">
+        Оцените, насколько ваша компания готова замечать изменения, проектировать новые решения и внедрять их до того, как изменения станут кризисом.
+      </p>
+      <div class="ts-instruction">
+        Прочитайте каждое утверждение и оцените его актуальность для вашей организации по шкале от 0 до 5.
+        <br><strong>0</strong> — это не похоже на нашу компанию. <strong>5</strong> — это наша компания на 100%.
+      </div>
+      <p class="ts-role-copy">15 утверждений · около 4 минут. Чтобы получить результат, в конце нужно оставить контакты.
+      </p>
+    </header>
+    <div class="ts-question-flow" id="tsQuestionFlow">
+      <div class="ts-progress" id="tsProgress"> <span id="tsProgressText">Вопрос 1 из 15</span> <span id="tsProgressCategory">Предвидение изменений</span>
+      </div>
+      <div class="ts-progress-bar" aria-hidden="true">
+        <div class="ts-progress-fill" id="tsProgressFill">
+        </div>
+      </div>
+      <form id="tsQuizForm" class="ts-question-stage">
+      </form>
+    </div>
+    <div class="ts-contact ts-contact-gate" id="tsContactGate">
+      <div class="ts-gate">
+        <div class="ts-role-gate" id="tsRoleGate" tabindex="-1">
+          <p class="ts-q-text ts-role-title">Какая из категорий лучше всего описывает Ваш род деятельности?
+          </p>
+          <p class="ts-role-copy">Это поможет нам понять, кто проходит тест. На расчет балла выбор не влияет.
+          </p>
+          <div class="ts-role-options">
+            <div class="ts-role-option">
+              <input type="radio" name="tsRole" id="tsRoleConsultant" value="consultant" data-label="Консультант/тренер/коуч" autocomplete="off">
+              <label for="tsRoleConsultant">Консультант/тренер/коуч
+              </label>
+            </div>
+            <div class="ts-role-option">
+              <input type="radio" name="tsRole" id="tsRoleEntrepreneur" value="entrepreneur" data-label="Предприниматель (но не в консалтинге/тренинговой индустрии)" autocomplete="off">
+              <label for="tsRoleEntrepreneur">Предприниматель (но не в консалтинге/тренинговой индустрии)
+              </label>
+            </div>
+            <div class="ts-role-option">
+              <input type="radio" name="tsRole" id="tsRoleEmployee" value="employee" data-label="Сотрудник компании/организации" autocomplete="off">
+              <label for="tsRoleEmployee">Сотрудник компании/организации
+              </label>
+            </div>
+            <div class="ts-role-option">
+              <input type="radio" name="tsRole" id="tsRoleOther" value="other" data-label="Другое" autocomplete="off">
+              <label for="tsRoleOther">Другое
+              </label>
+            </div>
+          </div>
+          <div class="ts-role-other-field" id="tsRoleOtherField">
+            <input type="text" id="tsRoleOtherInput" placeholder="Уточните, пожалуйста" autocomplete="off">
+          </div>
+          <div class="ts-field-error">Выберите категорию или уточните вариант «Другое».
+          </div>
+        </div>
+        <div class="ts-gate-fields">
+          <div class="ts-field" id="tsFirstNameField">
+            <label for="tsGateFirstName">Имя
+            </label>
+            <input id="tsGateFirstName" type="text" autocomplete="given-name" placeholder="Имя" required>
+            <div class="ts-field-error">Укажите имя.
+            </div>
+          </div>
+          <div class="ts-field" id="tsLastNameField">
+            <label for="tsGateLastName">Фамилия
+            </label>
+            <input id="tsGateLastName" type="text" autocomplete="family-name" placeholder="Фамилия" required>
+            <div class="ts-field-error">Укажите фамилию.
+            </div>
+          </div>
+          <div class="ts-field" id="tsEmailField">
+            <label for="tsGateEmail">Email
+            </label>
+            <input id="tsGateEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <div class="ts-field-error" id="tsEmailError">Укажите корректный email.
+            </div>
+          </div>
+        </div>
+        <div class="ts-consent-row" id="tsPrivacyConsentField">
+          <label class="ts-consent-label">
+            <input type="checkbox" id="tsGatePrivacyConsent" class="ts-consent-check"> <span>Я ознакомился(ась) с <a href="https://www.learn2reinvent.com/pages/privacy-policy" target="_blank" rel="noopener">Политикой конфиденциальности</a> и даю согласие на обработку персональных данных</span>
+          </label>
+          <div class="ts-consent-error">Подтвердите согласие, чтобы получить результат.
+          </div>
+        </div>
+        <div class="ts-consent-row" id="tsMarketingConsentField">
+          <label class="ts-consent-label">
+            <input type="checkbox" id="tsGateMarketingConsent" class="ts-consent-check"> <span>Я согласен(на) получать по email полезные материалы, новости и предложения Академии Пересборки. Отписаться можно в любой момент</span>
+          </label>
+        </div>
+        <div class="ts-gate-actions">
+          <button type="button" id="tsGateBackBtn" class="ts-back-btn">Назад
+          </button>
+          <button type="button" id="tsGateSubmitBtn" class="ts-btn">Показать результат
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ts-result" id="tsResultView">
+    <div class="ts-step" data-step="1">
+      <div class="ts-result-hero">
+        <div class="ts-hero-score">
+          <div class="ts-risk-label" id="tsRiskLabel">Уровень риска
+          </div>
+          <div class="ts-score"><span id="tsFinalScore">0</span><span class="ts-score-max">/75</span>
+          </div>
+          <h2 class="ts-result-title" id="tsResultTitle">Ваш результат
+          </h2>
+          <p class="ts-result-text" id="tsResultText">
+          </p>
+        </div>
+        <section class="ts-hero-next-step" aria-labelledby="tsProgramTitle">
+          <p class="ts-program-eyebrow">Следующий шаг
+          </p>
+          <h3 class="ts-program-title" id="tsProgramTitle">Освойте метод пересборки глубже
+          </h3>
+          <p class="ts-program-copy">Международная программа сертификации помогает превратить диагностику в практику: видеть сигналы, проектировать изменения и доводить их до результата.
+          </p> <a class="ts-btn ts-btn-primary" id="tsCertificationLink" href="https://reinventionacademy.kz/crp-certification" target="_blank" rel="noopener">Посмотреть программу сертификации<svg class="ts-certification-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M20 14v6H4V4h6"/></svg></a>
+        </section>
+      </div>
+    </div>
+    <div class="ts-step" data-step="2">
+      <section class="ts-details">
+        <div class="ts-details-body">
+          <section class="ts-overall-risk" aria-labelledby="tsOverallRiskTitle">
+            <h3 class="ts-overall-risk-title" id="tsOverallRiskTitle">Общий уровень риска
+            </h3>
+            <div class="ts-risk-labels">
+              <div id="tsRiskLabelCritical"><span class="ts-risk-range">0–15 · низкий риск</span>
+              </div>
+              <div id="tsRiskLabelHigh"><span class="ts-risk-range">16–35 · умеренный риск</span>
+              </div>
+              <div id="tsRiskLabelMedium"><span class="ts-risk-range">36–55 · высокий риск</span>
+              </div>
+              <div id="tsRiskLabelLow"><span class="ts-risk-range">56–75 · критический риск</span>
+              </div>
+            </div>
+            <div class="ts-risk-bar"> <span class="ts-risk-tick" style="left: 20%" aria-hidden="true"></span> <span class="ts-risk-tick" style="left: 46.6667%" aria-hidden="true"></span> <span class="ts-risk-tick" style="left: 73.3333%" aria-hidden="true"></span>
+              <div class="ts-risk-marker" id="tsRiskMarker">0
+              </div>
+            </div>
+            <div class="ts-risk-scale" aria-hidden="true"> <span>0 · лучше</span> <span style="left: 20%">15</span> <span style="left: 46.6667%">35</span> <span style="left: 73.3333%">55</span> <span>75 · хуже</span>
+            </div>
+          </section>
+          <section class="ts-result-summary ts-rebuild-card" id="tsBookOffer" aria-labelledby="tsRebuildTitle">
+            <div class="ts-rebuild-book-media"> <img class="ts-rebuild-book-image" src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2147736830/settings_images/9WNr9fJuSajvXMNyznrO_Group_699-min.png" alt="Книга «Синдром Титаника»">
+            </div>
+            <div class="ts-rebuild-head">
+              <h3 class="ts-result-summary-title" id="tsRebuildTitle">С чего начать пересборку
+              </h3>
+            </div>
+            <div class="ts-rebuild-body">
+              <div class="ts-result-explain" id="tsResultExplain">
+              </div>
+              <p class="ts-rebuild-book-copy">Книга помогает развить три способности из теста: предвидеть изменения, проектировать новый курс и доводить решения до результата.
+              </p>
+              <div class="ts-rebuild-actions"> <a class="ts-book-cta ts-book-cta-primary" id="tsBookDownloadBtn" href="https://s3.amazonaws.com/kajabi-storefronts-production/sites/49312/downloads/JDtM4QYyTFiznVNDOOD9_Titanic_Syndrome_RUS_Short.pdf" target="_blank" rel="noopener">Скачать фрагмент</a> <a class="ts-book-cta ts-book-cta-secondary" id="tsBookBuyBtn" href="https://reinventionacademy.mykajabi.com/offers/PPNRKvRP/checkout" target="_blank" rel="noopener">Купить книгу</a>
+              </div>
+              <div class="ts-download-status" id="tsDownloadStatus">
+                <p>Книга открылась в отдельном окне.
+                </p>
+              </div>
+            </div>
+          </section>
+          <div class="ts-diagnostics-heading">
+            <h3 class="ts-diagnostics-title">Три направления диагностики
+            </h3>
+            <p class="ts-diagnostics-copy">Чем выше балл, тем сильнее признаки Синдрома Титаника в этой области и тем раньше стоит начать работу с ней.
+            </p>
+          </div>
+          <div class="ts-area-list">
+            <div class="ts-area-row">
+              <div> <span class="ts-area-title">Компетенция 1 · Предвидение изменений</span>
+                <div class="ts-area-bar">
+                  <div class="ts-area-bar-fill" id="tsAnticipationBar">
+                  </div>
+                </div>
+              </div>
+              <div class="ts-area-score"> <span id="tsAnticipationScore">0</span><span class="ts-area-score-small">/25</span>
+              </div>
+              <div> <span class="ts-area-level" id="tsAnticipationLevel">Уровень</span>
+                <p class="ts-area-copy" id="tsAnticipationText">Компания может поздно замечать внешние сигналы, угрозы и новые возможности.
+                </p>
+              </div>
+            </div>
+            <div class="ts-area-row">
+              <div> <span class="ts-area-title">Компетенция 2 · Дизайн изменений</span>
+                <div class="ts-area-bar">
+                  <div class="ts-area-bar-fill" id="tsDesignBar">
+                  </div>
+                </div>
+              </div>
+              <div class="ts-area-score"> <span id="tsDesignScore">0</span><span class="ts-area-score-small">/25</span>
+              </div>
+              <div> <span class="ts-area-level" id="tsDesignLevel">Уровень</span>
+                <p class="ts-area-copy" id="tsDesignText">Компания умеет пересматривать подходы, стратегии и привычные способы работы.
+                </p>
+              </div>
+            </div>
+            <div class="ts-area-row">
+              <div> <span class="ts-area-title">Компетенция 3 · Реализация изменений</span>
+                <div class="ts-area-bar">
+                  <div class="ts-area-bar-fill" id="tsImplementationBar">
+                  </div>
+                </div>
+              </div>
+              <div class="ts-area-score"> <span id="tsImplementationScore">0</span><span class="ts-area-score-small">/25</span>
+              </div>
+              <div> <span class="ts-area-level" id="tsImplementationLevel">Уровень</span>
+                <p class="ts-area-copy" id="tsImplementationText">Компания частично переводит идеи в действия, но процесс изменений можно усилить.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="ts-secondary-actions">
+            <div class="ts-share-panel">
+              <div class="ts-next-actions">
+                <div class="ts-share-action">
+                  <button type="button" class="ts-btn-ghost" id="tsCopyResultBtn"> <svg class="ts-share-action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2"/> <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/> </svg> <span>Скопировать результат</span>
+                  </button>
+                  <p class="ts-share-action-note">Скопировать краткий итог, чтобы вставить его в письмо или чат.
+                  </p>
+                </div>
+                <div class="ts-share-action">
+                  <button type="button" class="ts-btn-ghost" id="tsTeamShareBtn"> <svg class="ts-share-action-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <path d="m4 12 15-7-5.5 14-2.8-5.7L4 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/> <path d="m10.7 13.3 3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/> </svg> <span>Отправить команде</span>
+                  </button>
+                  <p class="ts-share-action-note">Открыть письмо, чтобы поделиться результатом с коллегами.
+                  </p>
+                </div>
+                <button type="button" class="ts-restart-link" id="tsRestartBtn">Пройти тест ещё раз
+                </button>
+              </div>
+            </div>
+            <p class="ts-copy-note" id="tsCopyNote">
+              Результат скопирован. Теперь его можно вставить в сообщение, пост или письмо.
+            </p>
+            <section class="ts-consultation-section" aria-labelledby="tsConsultationTitle">
+              <div>
+                <h3 class="ts-consultation-title" id="tsConsultationTitle">Нужен взгляд на вашу ситуацию?
+                </h3>
+                <p class="ts-consultation-copy">Оставьте запрос, если хотите обсудить результат теста и дальнейшие действия.
+                </p>
+              </div>
+              <div>
+                <button type="button" class="ts-consultation-link" id="tsConsultationBtn">Запросить консультацию
+                </button>
+                <p class="ts-consultation-status" id="tsConsultationStatus" aria-live="polite">Спасибо! Мы получили ваш результат и скоро свяжемся с вами для консультации.
+                </p>
+              </div>
+            </section>
+            <div class="ts-result-footer">
+              <p class="ts-result-footer-label">Следите за нами
+              </p>
+              <div class="ts-social-links"> <a class="ts-social-link" id="tsTelegramLink" href="https://t.me/nadyazhexembayeva" target="_blank" rel="noopener" aria-label="Telegram"> <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path fill="#26A5E4" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/> </svg> </a> <a class="ts-social-link" id="tsInstagramLink" href="https://www.instagram.com/chief_reinvention_officer/" target="_blank" rel="noopener" aria-label="Instagram"> <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <defs> <linearGradient id="tsIgGradient" x1="0%" y1="100%" x2="100%" y2="0%"> <stop offset="0%" stop-color="#FEDA75"/> <stop offset="30%" stop-color="#FA7E1E"/> <stop offset="60%" stop-color="#D62976"/> <stop offset="85%" stop-color="#962FBF"/> <stop offset="100%" stop-color="#4F5BD5"/> </linearGradient> </defs> <path fill="url(#tsIgGradient)" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/> </svg> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

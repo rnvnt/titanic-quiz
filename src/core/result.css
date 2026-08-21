@@ -1,0 +1,674 @@
+/* Result-screen prototype only. The quiz, lead form and scoring flow stay unchanged. */
+.ts-result-hero {
+  align-items: start;
+}
+
+.ts-hero-score,
+.ts-hero-next-step {
+  max-width: none;
+}
+
+.ts-hero-score .ts-score {
+  margin: 10px 0 18px;
+}
+
+/* Семантика уровня для бейджей риска и зон */
+#tsResultView .ts-risk-label.is-strong,
+#tsResultView .ts-area-level.is-strong {
+  background: #e3f4ea;
+  color: #1f7a4d;
+}
+
+#tsResultView .ts-risk-label.is-medium,
+#tsResultView .ts-area-level.is-medium {
+  background: var(--ts-blue-soft);
+  color: var(--ts-blue-dark);
+}
+
+#tsResultView .ts-risk-label.is-risk,
+#tsResultView .ts-area-level.is-risk {
+  background: #fdeee4;
+  color: #c05a1d;
+}
+
+#tsResultView .ts-risk-label.is-critical,
+#tsResultView .ts-area-level.is-critical {
+  background: #fde8ea;
+  color: #bb1a2c;
+}
+
+.ts-area-bar-fill.is-strong::after { background: var(--ts-green); }
+.ts-area-bar-fill.is-risk::after { background: var(--ts-orange); }
+.ts-area-bar-fill.is-critical::after { background: var(--ts-red); }
+
+.ts-overall-risk .ts-risk-bar {
+  height: 6px;
+  margin-top: 38px;
+  overflow: visible;
+  border-radius: 999px;
+  background: #dfe7eb;
+}
+
+.ts-risk-tick {
+  position: absolute;
+  top: -4px;
+  width: 1px;
+  height: 14px;
+  background: #9fb0b8;
+}
+
+.ts-risk-marker {
+  top: -34px;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--ts-blue-dark);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.ts-risk-marker::after {
+  top: 27px;
+  bottom: auto;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--ts-blue);
+  box-shadow: 0 0 0 1px rgba(7, 59, 76, 0.14);
+}
+
+.ts-risk-scale {
+  position: relative;
+  height: 26px;
+  margin-top: 9px;
+  color: var(--ts-muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ts-risk-scale span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.ts-risk-scale span:first-child {
+  left: 0;
+  transform: none;
+  color: var(--ts-green);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ts-risk-scale span:last-child {
+  right: 0;
+  left: auto !important;
+  transform: none;
+  color: var(--ts-red);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ts-risk-labels {
+  margin-top: 10px;
+}
+
+.ts-risk-labels div.is-active {
+  display: block;
+}
+
+.ts-risk-labels .ts-risk-range {
+  margin: 0;
+  color: var(--ts-muted);
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.ts-diagnostics-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 60px;
+}
+
+.ts-diagnostics-copy {
+  max-width: 760px;
+  margin-top: 10px;
+}
+
+.ts-area-title::before {
+  display: none;
+  content: none;
+}
+
+.ts-details-body > .ts-result-summary {
+  max-width: none;
+  margin-top: 56px;
+}
+
+.ts-rebuild-card {
+  display: grid;
+  grid-template-columns: 475px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: 48px;
+  row-gap: 10px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ts-rebuild-book-media {
+  position: relative;
+  grid-row: 1 / 3;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  aspect-ratio: 1568 / 1154;
+  padding: 0;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
+.ts-rebuild-book-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.08);
+}
+
+.ts-rebuild-head {
+  align-self: start;
+}
+
+.ts-rebuild-card .ts-result-summary-title {
+  margin: 0;
+}
+
+.ts-rebuild-card .ts-result-explain {
+  margin: 0 0 6px;
+  color: var(--ts-text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ts-rebuild-book-copy {
+  margin: 0;
+  color: var(--ts-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ts-rebuild-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.ts-rebuild-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 470px;
+  margin-top: 0;
+  padding-top: 22px;
+}
+
+.ts-book-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--ts-red);
+  border-radius: 6px;
+  font-family: var(--ts-display);
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.ts-book-cta-primary {
+  background: var(--ts-red);
+  color: #fff !important;
+}
+
+.ts-book-cta-primary:hover {
+  border-color: var(--ts-red-dark);
+  background: var(--ts-red-dark);
+}
+
+.ts-book-cta-secondary {
+  background: #fff;
+  color: var(--ts-red) !important;
+}
+
+.ts-book-cta-secondary:hover {
+  border-color: var(--ts-red-dark);
+  background: #fff5f6;
+  color: var(--ts-red-dark) !important;
+}
+
+.ts-area-bar-fill {
+  position: relative;
+  overflow: visible;
+  background: transparent;
+}
+
+.ts-area-bar {
+  position: relative;
+  height: 6px;
+  overflow: visible;
+  border-radius: 999px;
+  background: #dfe7eb;
+}
+
+.ts-area-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--ts-blue);
+  box-shadow: 0 0 0 1px rgba(7, 59, 76, 0.14);
+}
+
+.ts-resource-section {
+  max-width: 760px;
+}
+
+.ts-resource-grid {
+  width: 100%;
+  max-width: none;
+}
+
+.ts-book-resource {
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 26px;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid var(--ts-line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--ts-shadow-soft);
+}
+
+.ts-book-image {
+  width: 100%;
+  height: 154px;
+  object-fit: contain;
+}
+
+.ts-secondary-actions {
+  width: 100%;
+  max-width: none;
+}
+
+.ts-details-body,
+.ts-details-body > .ts-overall-risk,
+.ts-details-body > .ts-result-summary,
+.ts-details-body > .ts-diagnostics-heading,
+.ts-details-body > .ts-area-list,
+.ts-details-body > .ts-secondary-actions,
+.ts-share-panel,
+.ts-consultation-section,
+.ts-result-footer {
+  width: 100%;
+  max-width: none;
+}
+
+.ts-consultation-section {
+  padding: 26px 28px;
+  border: 1px solid var(--ts-line);
+  border-radius: 12px;
+  background: var(--ts-blue-soft);
+}
+
+#tsResultView .ts-consultation-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  margin: 0;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--ts-blue-deep);
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#tsResultView .ts-consultation-link:not(:disabled):hover {
+  background: var(--ts-blue-dark);
+}
+
+#tsResultView .ts-consultation-link:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.ts-result-footer {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ts-line);
+}
+
+/* One type system for the whole result screen: section title, body and caption. */
+#tsResultView,
+#tsResultView button,
+#tsResultView a {
+  font-family: var(--ts-display);
+}
+
+#tsResultView .ts-result-title,
+#tsResultView .ts-program-title,
+#tsResultView .ts-overall-risk-title,
+#tsResultView .ts-result-summary-title,
+#tsResultView .ts-diagnostics-title,
+#tsResultView .ts-consultation-title,
+#tsResultView .ts-area-title {
+  color: var(--ts-text);
+  font-family: var(--ts-display);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+#tsResultView .ts-result-title {
+  font-size: clamp(26px, 2.6vw, 32px);
+  line-height: 1.16;
+}
+
+#tsResultView .ts-program-title,
+#tsResultView .ts-overall-risk-title,
+#tsResultView .ts-result-summary-title,
+#tsResultView .ts-diagnostics-title {
+  font-size: clamp(22px, 2.1vw, 26px);
+  line-height: 1.2;
+}
+
+#tsResultView .ts-consultation-title {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+#tsResultView .ts-result-text,
+#tsResultView .ts-program-copy,
+#tsResultView .ts-result-explain,
+#tsResultView .ts-rebuild-book-copy,
+#tsResultView .ts-diagnostics-copy {
+  font-family: var(--ts-display);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+#tsResultView .ts-result-text,
+#tsResultView .ts-result-explain {
+  color: #263238;
+}
+
+#tsResultView .ts-program-copy,
+#tsResultView .ts-rebuild-book-copy,
+#tsResultView .ts-diagnostics-copy {
+  color: var(--ts-muted);
+}
+
+#tsResultView .ts-area-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+#tsResultView .ts-area-copy,
+#tsResultView .ts-consultation-copy {
+  color: var(--ts-muted);
+  font-family: var(--ts-display);
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+#tsResultView .ts-risk-label,
+#tsResultView .ts-program-eyebrow,
+#tsResultView .ts-area-level,
+#tsResultView .ts-risk-marker,
+#tsResultView .ts-risk-range,
+#tsResultView .ts-risk-scale,
+#tsResultView .ts-share-action-note {
+  font-family: var(--ts-display);
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+#tsResultView .ts-program-eyebrow {
+  margin-bottom: 8px;
+  color: var(--ts-blue-dark);
+  letter-spacing: 0.06em;
+}
+
+#tsResultView .ts-area-level {
+  letter-spacing: 0;
+}
+
+#tsResultView .ts-area-score {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+#tsResultView .ts-book-cta,
+#tsResultView .ts-btn,
+#tsResultView .ts-btn-ghost {
+  font-family: var(--ts-display);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.ts-next-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 0;
+}
+
+.ts-share-action {
+  min-width: 0;
+}
+
+.ts-next-actions .ts-share-action .ts-btn-ghost {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 18px;
+  gap: 10px;
+  border: 1px solid #aac4cf;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ts-blue-deep) !important;
+  text-decoration: none !important;
+  box-shadow: var(--ts-shadow-soft);
+}
+
+.ts-next-actions .ts-share-action .ts-btn-ghost:hover {
+  border-color: var(--ts-blue-dark);
+  background: var(--ts-blue-soft);
+}
+
+.ts-share-action-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.ts-share-action-note {
+  margin: 8px 2px 0;
+  color: var(--ts-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ts-next-actions .ts-restart-link {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 0;
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .ts-rebuild-card {
+    grid-template-columns: 317px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 28px;
+    row-gap: 20px;
+  }
+
+  .ts-rebuild-book-media {
+    grid-row: 1;
+    width: 317px;
+  }
+
+  .ts-rebuild-head {
+    grid-column: 2;
+    align-self: center;
+  }
+
+  .ts-rebuild-body {
+    grid-column: 1 / -1;
+  }
+
+  .ts-rebuild-actions {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .ts-details {
+    margin-top: 48px;
+  }
+
+  .ts-contact-gate {
+    scroll-margin-top: 104px;
+  }
+
+  .ts-risk-scale {
+    height: 40px;
+  }
+
+  .ts-risk-scale span:first-child,
+  .ts-risk-scale span:last-child {
+    top: 20px;
+  }
+
+  .ts-rebuild-card {
+    grid-template-columns: 154px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 18px;
+    padding: 0;
+  }
+
+  .ts-rebuild-book-media {
+    grid-row: 1;
+    min-height: 0;
+    aspect-ratio: 1568 / 1154;
+    padding: 0;
+  }
+
+  .ts-rebuild-book-image {
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.08);
+  }
+
+  .ts-rebuild-head {
+    grid-column: 2;
+    align-self: center;
+  }
+
+  .ts-rebuild-body {
+    grid-column: 1 / -1;
+  }
+
+  .ts-rebuild-actions {
+    max-width: none;
+  }
+
+  #tsResultView .ts-result-title {
+    font-size: 24px;
+  }
+
+  #tsResultView .ts-program-title,
+  #tsResultView .ts-overall-risk-title,
+  #tsResultView .ts-result-summary-title,
+  #tsResultView .ts-diagnostics-title {
+    font-size: 22px;
+  }
+
+  #tsResultView .ts-result-text,
+  #tsResultView .ts-program-copy,
+  #tsResultView .ts-result-explain,
+  #tsResultView .ts-rebuild-book-copy,
+  #tsResultView .ts-diagnostics-copy {
+    font-size: 14px;
+  }
+
+  #tsResultView .ts-area-title,
+  #tsResultView .ts-area-copy,
+  #tsResultView .ts-consultation-copy {
+    font-size: 13px;
+  }
+
+  .ts-next-actions {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ts-next-actions .ts-restart-link {
+    grid-column: auto;
+  }
+
+  .ts-consultation-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 22px 20px;
+  }
+
+  #tsResultView .ts-consultation-link {
+    width: 100%;
+  }
+}
+
+@media (max-width: 345px) {
+  .ts-rebuild-card {
+    grid-template-columns: 125px minmax(0, 1fr);
+    padding: 0;
+  }
+
+  .ts-rebuild-actions {
+    grid-template-columns: 1fr;
+  }
+}

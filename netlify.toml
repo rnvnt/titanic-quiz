@@ -1,0 +1,8 @@
+# Сборка идёт на стороне Netlify: любой коммит в main пересобирает dist/
+# и выкладывает его на titanic-quiz.netlify.app. Локальный терминал не нужен.
+#
+# node --check — страховка от опечатки в тексте вопроса: если правка сломала
+# синтаксис quiz.js, сборка падает и на сайте остаётся прошлая рабочая версия.
+[build]
+  command = "python3 build.py && node --check dist/core.js && node --check dist/session.js"
+  publish = "dist"

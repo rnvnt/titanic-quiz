@@ -1,0 +1,98 @@
+/* Слой индивидуальной версии: phone gate на экране результата.
+   В групповой сессии контакт участника хосту не нужен, поэтому здесь. */
+
+/* Consultation phone gate */
+#tsResultView .ts-consultation-link.is-hidden {
+  display: none;
+}
+
+.ts-consultation-form {
+  display: none;
+  width: 100%;
+  margin: 0;
+}
+
+.ts-consultation-form.is-visible {
+  display: block;
+}
+
+.ts-consultation-phone-label {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--ts-text);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.ts-consultation-phone-input {
+  display: block;
+  width: 100%;
+  height: 52px;
+  margin: 0;
+  padding: 0 14px;
+  border: 1px solid #b8c8ce;
+  border-radius: 8px;
+  background: var(--ts-white);
+  color: var(--ts-text);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ts-consultation-phone-input:focus {
+  border-color: var(--ts-blue-dark);
+  box-shadow: 0 0 0 3px rgba(0, 122, 166, 0.14);
+}
+
+.ts-consultation-form.is-invalid .ts-consultation-phone-input {
+  border-color: var(--ts-red);
+  box-shadow: 0 0 0 3px rgba(224, 41, 60, 0.1);
+}
+
+.ts-consultation-phone-error {
+  display: none;
+  margin: 7px 0 0;
+  color: var(--ts-red-dark);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ts-consultation-form.is-invalid .ts-consultation-phone-error {
+  display: block;
+}
+
+#tsResultView .ts-consultation-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  margin: 12px 0 0;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--ts-blue-deep);
+  color: var(--ts-white);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+#tsResultView .ts-consultation-submit:not(:disabled):hover {
+  background: var(--ts-blue-dark);
+}
+
+#tsResultView .ts-consultation-submit:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.ts-consultation-status.is-error {
+  color: var(--ts-red-dark);
+}

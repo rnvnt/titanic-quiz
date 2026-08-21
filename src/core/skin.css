@@ -1,0 +1,248 @@
+/* ===== v2 skin: бренд reinventionacademy.kz ===== */
+:root {
+  --ts-blue: #01B3F3;
+  --ts-blue-dark: #0090C7;
+  --ts-blue-deep: #073B4C;
+  --ts-blue-soft: #EAF9FE;
+  --ts-red: #E50520;
+  --ts-red-dark: #C10419;
+  --ts-text: #0F0F0F;
+  --ts-line: #DCEBF2;
+  --ts-muted: #5E7079;
+  --ts-display: "Montserrat", "Raleway", Arial, sans-serif;
+  --ts-shadow: 0 10px 30px rgba(7, 59, 76, 0.08);
+  --ts-shadow-soft: 0 2px 10px rgba(7, 59, 76, 0.06);
+}
+
+.ts-quiz {
+  padding: 180px 20px 64px;
+  font-family: "Montserrat", "Raleway", Arial, sans-serif;
+  background: transparent;
+}
+
+/* --- Hero --- */
+.ts-header {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 48px;
+  padding: 48px 0 44px;
+}
+
+.ts-header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -64px;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  background: linear-gradient(180deg, #EAF9FE 0%, rgba(234, 249, 254, 0) 100%);
+}
+
+.ts-eyebrow {
+  color: var(--ts-blue-deep);
+  font-family: var(--ts-display);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.ts-title {
+  font-family: var(--ts-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--ts-blue);
+  font-size: clamp(30px, 4.6vw, 56px);
+  line-height: 1.1;
+}
+
+.ts-lead {
+  font-family: var(--ts-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--ts-blue-deep);
+}
+
+.ts-instruction {
+  margin: 28px 0 20px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #2a2a2a;
+  font-family: "Raleway", Arial, sans-serif;
+}
+
+.ts-instruction strong {
+  color: var(--ts-blue-dark);
+}
+
+.ts-header .ts-role-copy {
+  margin: 0 0 20px;
+}
+
+/* --- Карточки --- */
+.ts-question {
+  padding: 28px;
+  border: 1px solid var(--ts-line);
+  border-radius: 12px;
+  box-shadow: var(--ts-shadow);
+}
+
+.ts-contact {
+  padding: 28px;
+  border: 1px solid var(--ts-line);
+  border-radius: 12px;
+  box-shadow: var(--ts-shadow);
+}
+
+.ts-q-text {
+  font-family: var(--ts-display);
+  font-weight: 700;
+  font-size: 19px;
+}
+
+.ts-q-num {
+  font-family: var(--ts-display);
+}
+
+/* --- Выбор роли --- */
+.ts-role-option label {
+  border-radius: 8px;
+  border-color: var(--ts-line);
+  box-shadow: var(--ts-shadow-soft);
+  font-family: var(--ts-display);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.ts-role-option input:checked + label {
+  box-shadow: 0 6px 18px rgba(1, 179, 243, 0.35);
+}
+
+/* --- Шкала 0–5 --- */
+.ts-opt label {
+  min-height: 56px;
+  border-radius: 8px;
+  border-color: var(--ts-line);
+  box-shadow: var(--ts-shadow-soft);
+  font-family: var(--ts-display);
+  font-size: 18px;
+}
+
+.ts-opt input:checked + label {
+  box-shadow: 0 6px 18px rgba(1, 179, 243, 0.4);
+}
+
+/* --- Прогресс --- */
+.ts-progress {
+  font-family: var(--ts-display);
+  font-weight: 700;
+}
+
+.ts-progress-bar {
+  height: 6px;
+  border-radius: 999px;
+}
+
+.ts-progress-fill {
+  border-radius: 999px;
+}
+
+/* --- Кнопки: красный primary как на сайте --- */
+.ts-btn {
+  border-radius: 5px;
+  border-color: var(--ts-red);
+  background: var(--ts-red);
+  font-family: var(--ts-display);
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(229, 5, 32, 0.22);
+}
+
+.ts-btn:hover {
+  background: var(--ts-red-dark);
+  border-color: var(--ts-red-dark);
+}
+
+/* «Показать результат» — синяя, а не красная: красный на этом шаге читается
+   как ошибка, а не как основное действие. */
+#tsGateSubmitBtn {
+  border-color: var(--ts-blue-deep);
+  background: var(--ts-blue-deep);
+  box-shadow: 0 8px 20px rgba(7, 59, 76, 0.22);
+}
+
+#tsGateSubmitBtn:hover {
+  border-color: var(--ts-blue-dark);
+  background: var(--ts-blue-dark);
+}
+
+.ts-back-btn {
+  border-radius: 5px;
+  font-family: var(--ts-display);
+}
+
+/* --- Поля --- */
+.ts-field input,
+.ts-role-other-field input {
+  border-radius: 8px;
+}
+
+.ts-field label {
+  font-family: var(--ts-display);
+}
+
+/* --- Результаты --- */
+.ts-result-hero {
+  border-radius: 12px;
+  box-shadow: var(--ts-shadow);
+}
+
+.ts-result-title,
+.ts-result-summary-title,
+.ts-diagnostics-title,
+.ts-overall-risk-title,
+.ts-area-title,
+.ts-role-title {
+  font-family: var(--ts-display);
+}
+
+.ts-score,
+.ts-score-max,
+.ts-area-score {
+  font-family: var(--ts-display);
+}
+
+.ts-risk-label {
+  font-family: var(--ts-display);
+}
+
+.ts-eyebrow,
+.ts-result-summary-eyebrow,
+.ts-diagnostics-eyebrow {
+  font-family: var(--ts-display);
+}
+
+/* --- Мобильные поправки скина --- */
+@media (max-width: 760px) {
+  .ts-quiz {
+    padding: 130px 16px 44px;
+  }
+
+  .ts-header {
+    padding: 32px 0 28px;
+    margin-bottom: 32px;
+  }
+
+  .ts-header::before {
+    top: -40px;
+  }
+
+  .ts-question,
+  .ts-contact {
+    padding: 20px;
+  }
+
+  .ts-opt label {
+    min-height: 46px;
+    font-size: 15px;
+  }
+}
