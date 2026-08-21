@@ -18,7 +18,7 @@
 
   const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxHIeLZ-tPJB-9P6W2d2emSWgJL2b4MabHGWBiFF-86qA4EJhPLqc_5MEOuH8iif0__/exec";
   const CONSENT_TEXT_VERSION = "2026-07-17-v1";
-  const BOOK_DOWNLOAD_URL = "https://s3.amazonaws.com/kajabi-storefronts-production/sites/49312/downloads/JDtM4QYyTFiznVNDOOD9_Titanic_Syndrome_RUS_Short.pdf";
+  const BOOK_DOWNLOAD_URL = "https://s3.amazonaws.com/kajabi-storefronts-production/file-uploads/sites/2147495175/themes/2147759540/downloads/3415355-f623-64-a28b-cf0cab7030a_Titanic_Syndrome_RU_2026_Short.pdf";
   const THANK_YOU_URL = "https://reinventionacademy.mykajabi.com/thank-you-titanic-free";
   const CERTIFICATION_URL = "https://reinventionacademy.kz/crp-certification";
   const TELEGRAM_URL = "https://t.me/nadyazhexembayeva";
